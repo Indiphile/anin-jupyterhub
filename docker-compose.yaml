@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  jupyterhub:
+    build: .
+    image: jupyter
+    volumes:
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
+      - jupyterhub_data:/srv/jupyterhub/data
+    ports:
+      - "8000:8000"
+
+volumes:
+  jupyterhub_data:
