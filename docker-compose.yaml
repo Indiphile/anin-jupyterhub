@@ -8,7 +8,8 @@ services:
       - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py
       - jupyterhub_data:/srv/jupyterhub/data
     ports:
-      - "8000:8000"
+      - "8001:8000"
+    restart: unless-stopped
 
 volumes:
   jupyterhub_data:
