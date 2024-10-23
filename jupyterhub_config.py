@@ -2,12 +2,16 @@ import pwd, subprocess, os, nativeauthenticator
 
 c = get_config()  # noqa
 
+
+c.JupyterHub.disable_check_xsrf = True
+
 c.JupyterHub.tornado_settings = {
     "headers": {
         "Content-Security-Policy": "frame-ancestors *",
-      # "Content-Security-Policy": "frame-ancestors 'self' http://localhost:8000 https://my-external-domain.com",
+        #"Content-Security-Policy": "frame-ancestors 'self' http://10.150.16.180/",
     }
 }
+
 
 c.Authenticator.admin_users = {"admin", "indi", "user-admin"}
 
