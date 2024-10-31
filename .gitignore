@@ -1,3 +1,4 @@
 datacube.conf
 Dockerfile-old
 .docker.env
+.env
